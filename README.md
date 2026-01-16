@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Baba Pest Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #1b5e20;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2e7d32;
+    }
+    .services li {
+      margin: 8px 0;
+    }
+    button {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #1b5e20;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>O Baba Pest Control</h1>
+    <p>Safe • Reliable • Affordable Pest Control Services</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      O Baba Pest Control provides professional pest management services
+      for homes, offices, and commercial spaces. We use safe and effective
+      methods to keep your environment pest-free.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul class="services">
+      <li>🐜 Ant Control</li>
+      <li>🪳 Cockroach Control</li>
+      <li>🐀 Rodent Control</li>
+      <li>🦟 Mosquito Control</li>
+      <li>🐝 Termite Treatment</li>
+    </ul>
+    <button onclick="scrollToForm()">Book Service</button>
+  </section>
+
+  <section id="booking">
+    <h2>Book a Service</h2>
+    <form onsubmit="sendWhatsApp(event)">
+      <label>Name:</label><br />
+      <input type="text" id="name" required /><br /><br />
+
+      <label>Phone:</label><br />
+      <input type="tel" id="phone" required /><br /><br />
+
+      <label>Service Needed:</label><br />
+      <select id="service" required>
+        <option value="Ant Control">Ant Control</option>
+        <option value="Cockroach Control">Cockroach Control</option>
+        <option value="Rodent Control">Rodent Control</option>
+        <option value="Mosquito Control">Mosquito Control</option>
+        <option value="Termite Treatment">Termite Treatment</option>
+      </select><br /><br />
+
+      <label>Message:</label><br />
+      <textarea id="message" rows="4"></textarea><br /><br />
+
+      <button type="submit">Send on WhatsApp</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+    <p><strong>Email:</strong> obabapestcontrol@gmail.com</p>
+    <p><strong>Location:</strong> Pune, Maharashtra</p>
+  </section>
+
+  <footer>
+    <p>© 2026 O Baba Pest Control. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function scrollToForm() {
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+      var phone = document.getElementById('phone').value;
+      var service = document.getElementById('service').value;
+      var message = document.getElementById('message').value;
+
+      var text = "Hello O Baba Pest Control,%0A" +
+                 "Name: " + name + "%0A" +
+                 "Phone: " + phone + "%0A" +
+                 "Service: " + service + "%0A" +
+                 "Message: " + message;
+
+      var whatsappNumber = "91XXXXXXXXXX"; // replace with real number
+      window.open("https://wa.me/" + whatsappNumber + "?text=" + text, "_blank");
+    }
+  </script>
+
+</body>
+</html>
